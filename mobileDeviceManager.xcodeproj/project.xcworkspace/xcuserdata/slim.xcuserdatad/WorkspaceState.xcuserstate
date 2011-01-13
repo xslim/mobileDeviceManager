@@ -405,7 +405,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>43</integer>
+					<integer>46</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -1949,7 +1949,7 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>316616320.45984298</real>
+		<real>316617175.10549802</real>
 		<string>{0, 1553}</string>
 		<string>{140, 69}</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
@@ -2441,11 +2441,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>566</integer>
+					<integer>567</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>567</integer>
+					<integer>568</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -5915,7 +5915,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>316616320.45879698</real>
+		<real>316617175.10359401</real>
 		<string>{0, 1553}</string>
 		<string>{140, 69}</string>
 		<dict>
@@ -6007,7 +6007,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>547</integer>
+					<integer>566</integer>
 				</dict>
 			</array>
 		</dict>
@@ -6082,7 +6082,7 @@
 		<string>IDEActivityReportStringSegmentStringValue</string>
 		<real>2</real>
 		<string> </string>
-		<string>Build</string>
+		<string>Archive</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6261,7 +6261,7 @@
 				<integer>563</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>316615666.213579</real>
+			<real>316617170.10162801</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -6272,8 +6272,9 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 14:47</string>
+		<string>Today at 15:12</string>
 		<integer>106</integer>
+		<string>mobileDeviceManager</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6298,27 +6299,27 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>568</integer>
+					<integer>569</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>570</integer>
+					<integer>571</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>572</integer>
+					<integer>573</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>574</integer>
+					<integer>575</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>576</integer>
+					<integer>577</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>578</integer>
+					<integer>579</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -6340,7 +6341,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>569</integer>
+				<integer>570</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/slim/src/mobileDeviceManager/Source/main.m</string>
@@ -6358,7 +6359,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>571</integer>
+				<integer>572</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/slim/src/mobileDeviceManager/Source/DeviceAdapter.m</string>
@@ -6376,7 +6377,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>573</integer>
+				<integer>574</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/slim/src/mobileDeviceManager/Source/MobileDeviceAccess.h</string>
@@ -6394,7 +6395,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>575</integer>
+				<integer>576</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/slim/src/mobileDeviceManager/Source/MobileDeviceAccess.m</string>
@@ -6412,7 +6413,7 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>577</integer>
+				<integer>578</integer>
 			</dict>
 		</dict>
 		<string>file://localhost/Users/slim/src/mobileDeviceManager/Source/DeviceAdapter.h</string>
