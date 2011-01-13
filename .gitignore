@@ -1,0 +1,16 @@
+#xcode noise
+build/*
+#*.xcodeproj/*
+#!*.xcodeproj/project.pbxproj
+*.pbxuser
+*.perspective
+*.perspectivev3
+
+*.swp
+*~.nib
+
+.svn
+
+#osx noise
+.DS_Store
+#profile

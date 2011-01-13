@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		557ABB8A12DDB1730074B901 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557ABB8912DDB1730074B901 /* Foundation.framework */; };
+		557ABB8D12DDB1730074B901 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 557ABB8C12DDB1730074B901 /* main.m */; };
+		557ABB9712DDB1C40074B901 /* MobileDeviceAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 557ABB9612DDB1C40074B901 /* MobileDeviceAccess.m */; };
+		557ABB9C12DDB22A0074B901 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557ABB9B12DDB22A0074B901 /* Cocoa.framework */; };
+		557ABB9E12DDB2730074B901 /* MobileDevice in Frameworks */ = {isa = PBXBuildFile; fileRef = 557ABB9D12DDB2730074B901 /* MobileDevice */; };
+		557ABBA412DDB32E0074B901 /* DeviceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 557ABBA312DDB32E0074B901 /* DeviceAdapter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		557ABB8312DDB1730074B901 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		557ABB8512DDB1730074B901 /* mobileDeviceManager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mobileDeviceManager; sourceTree = BUILT_PRODUCTS_DIR; };
+		557ABB8912DDB1730074B901 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		557ABB8B12DDB1730074B901 /* mobileDeviceManager.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mobileDeviceManager.1; sourceTree = "<group>"; };
+		557ABB8C12DDB1730074B901 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		557ABB8F12DDB1730074B901 /* mobileDeviceManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mobileDeviceManager-Prefix.pch"; sourceTree = "<group>"; };
+		557ABB9512DDB1C40074B901 /* MobileDeviceAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileDeviceAccess.h; sourceTree = "<group>"; };
+		557ABB9612DDB1C40074B901 /* MobileDeviceAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileDeviceAccess.m; sourceTree = "<group>"; };
+		557ABB9B12DDB22A0074B901 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		557ABB9D12DDB2730074B901 /* MobileDevice */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = MobileDevice; path = /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice; sourceTree = "<absolute>"; };
+		557ABBA212DDB32E0074B901 /* DeviceAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceAdapter.h; sourceTree = "<group>"; };
+		557ABBA312DDB32E0074B901 /* DeviceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceAdapter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		557ABB8212DDB1730074B901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557ABB9C12DDB22A0074B901 /* Cocoa.framework in Frameworks */,
+				557ABB8A12DDB1730074B901 /* Foundation.framework in Frameworks */,
+				557ABB9E12DDB2730074B901 /* MobileDevice in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		557ABB7812DDB1730074B901 = {
+			isa = PBXGroup;
+			children = (
+				557ABB7F12DDB1730074B901 /* Source */,
+				557ABB8012DDB1730074B901 /* Documentation */,
+				557ABB8612DDB1730074B901 /* Products */,
+				557ABB8812DDB1730074B901 /* Frameworks */,
+				557ABB8E12DDB1730074B901 /* Other Sources */,
+			);
+			sourceTree = "<group>";
+		};
+		557ABB7F12DDB1730074B901 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				557ABBA212DDB32E0074B901 /* DeviceAdapter.h */,
+				557ABBA312DDB32E0074B901 /* DeviceAdapter.m */,
+				557ABB9512DDB1C40074B901 /* MobileDeviceAccess.h */,
+				557ABB9612DDB1C40074B901 /* MobileDeviceAccess.m */,
+				557ABB8C12DDB1730074B901 /* main.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		557ABB8012DDB1730074B901 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				557ABB8B12DDB1730074B901 /* mobileDeviceManager.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		557ABB8612DDB1730074B901 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				557ABB8512DDB1730074B901 /* mobileDeviceManager */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		557ABB8812DDB1730074B901 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				557ABB9D12DDB2730074B901 /* MobileDevice */,
+				557ABB9B12DDB22A0074B901 /* Cocoa.framework */,
+				557ABB8912DDB1730074B901 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		557ABB8E12DDB1730074B901 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				557ABB8F12DDB1730074B901 /* mobileDeviceManager-Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		557ABB8412DDB1730074B901 /* mobileDeviceManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 557ABB9212DDB1730074B901 /* Build configuration list for PBXNativeTarget "mobileDeviceManager" */;
+			buildPhases = (
+				557ABB8112DDB1730074B901 /* Sources */,
+				557ABB8212DDB1730074B901 /* Frameworks */,
+				557ABB8312DDB1730074B901 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mobileDeviceManager;
+			productName = mobileDeviceManager;
+			productReference = 557ABB8512DDB1730074B901 /* mobileDeviceManager */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		557ABB7A12DDB1730074B901 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Ciklum;
+			};
+			buildConfigurationList = 557ABB7D12DDB1730074B901 /* Build configuration list for PBXProject "mobileDeviceManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 557ABB7812DDB1730074B901;
+			productRefGroup = 557ABB8612DDB1730074B901 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				557ABB8412DDB1730074B901 /* mobileDeviceManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		557ABB8112DDB1730074B901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557ABB8D12DDB1730074B901 /* main.m in Sources */,
+				557ABB9712DDB1C40074B901 /* MobileDeviceAccess.m in Sources */,
+				557ABBA412DDB32E0074B901 /* DeviceAdapter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		557ABB9012DDB1730074B901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		557ABB9112DDB1730074B901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PREBINDING = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		557ABB9312DDB1730074B901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mobileDeviceManager-Prefix.pch";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/MobileDevice.framework/Versions/A\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		557ABB9412DDB1730074B901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mobileDeviceManager-Prefix.pch";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/MobileDevice.framework/Versions/A\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		557ABB7D12DDB1730074B901 /* Build configuration list for PBXProject "mobileDeviceManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				557ABB9012DDB1730074B901 /* Debug */,
+				557ABB9112DDB1730074B901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		557ABB9212DDB1730074B901 /* Build configuration list for PBXNativeTarget "mobileDeviceManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				557ABB9312DDB1730074B901 /* Debug */,
+				557ABB9412DDB1730074B901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 557ABB7A12DDB1730074B901 /* Project object */;
+}
