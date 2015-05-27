@@ -878,11 +878,11 @@ static BOOL read_dir( AFCDirectoryAccess *self, afc_connection afc, NSString *pa
 				if (!out) {
 					[self setLastError:@"Can't open output file"];
 				} else {
-					// copy all content across 10K at a time...
-					const uint32_t bufsz = 10240;
+					// copy all content across 100K at a time...
+					const uint32_t bufsz = 102400;
 					NSMutableData *buff = [[NSMutableData alloc] initWithLength:bufsz];
 					while (1) {
-						uint32_t n = [in readN:bufsz bytes:[buff mutableBytes]];
+						uint32_t n = [in readN:bufsz bytes:[buff mutableBytes]]; // FIXME: reads whole file even if it is more then bufsz
 						if (n==0) break;
 						[out writeData:[NSData dataWithBytesNoCopy:[buff mutableBytes] length:n freeWhenDone:NO]];
 					}
@@ -899,6 +899,20 @@ static BOOL read_dir( AFCDirectoryAccess *self, afc_connection afc, NSString *pa
 	return result;
 }
 
+- (BOOL)copyRemoteFile:(NSString*)path1 toLocalDir:(NSString*)path2
+{
+    NSString *fname = [path1 lastPathComponent];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSError *error = nil;
+    [fm createDirectoryAtPath:path2 withIntermediateDirectories:YES attributes:nil error:&error];
+    if (error != nil) {
+        NSLog(@"Create directory %@ is failed: %@", path2, error);
+        return NO;
+    }
+    NSString *dest = [path2 stringByAppendingPathComponent:fname];
+    return [self copyRemoteFile:path1 toLocalFile:dest];
+}
+
 @end
 
 @implementation AFCMediaDirectory
@@ -908,7 +922,7 @@ static BOOL read_dir( AFCDirectoryAccess *self, afc_connection afc, NSString *pa
 	if (self = [super initWithName:@"com.apple.afc" onDevice:device]) {
 		int ret = AFCConnectionOpen(_service, 0/*timeout*/, &_afc);
 		if (ret != 0) {
-			NSLog(@"AFCConnectionOpen failed: %lx", ret);
+			NSLog(@"AFCConnectionOpen failed: %lx", (unsigned long)ret);
 			[self release];
 			self = nil;
 		}
@@ -925,7 +939,7 @@ static BOOL read_dir( AFCDirectoryAccess *self, afc_connection afc, NSString *pa
 	if (self = [super initWithName:@"com.apple.crashreportcopymobile" onDevice:device]) {
 		int ret = AFCConnectionOpen(_service, 0/*timeout*/, &_afc);
 		if (ret != 0) {
-			NSLog(@"AFCConnectionOpen failed: %lx", ret);
+			NSLog(@"AFCConnectionOpen failed: %lx", (unsigned long)ret);
 			[self release];
 			self = nil;
 		}

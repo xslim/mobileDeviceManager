@@ -761,6 +761,13 @@ com.apple.mobile.application_uninstalled
 - (BOOL)copyRemoteFile:(NSString*)frompath toLocalFile:(NSString*)topath;
 
 /**
+ * Copy the contents of a device file to a file on the Mac.
+ * @param frompath Full pathname of the device file
+ * @param topath Full pathname of the local directory to copy into
+ */
+- (BOOL)copyRemoteFile:(NSString*)path1 toLocalDir:(NSString*)path2;
+
+/**
  * Close this connection.  From this point on, none of the other functions
  * will run correctly.
  */
