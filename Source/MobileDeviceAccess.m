@@ -155,7 +155,7 @@ afc_error_t AFCFileRefOpen(afc_connection conn, const char *path, uint64_t mode,
 afc_error_t AFCFileRefClose(afc_connection conn,afc_file_ref ref);
 afc_error_t AFCFileRefSeek(afc_connection conn,	afc_file_ref ref, int64_t offset, uint64_t mode);
 afc_error_t AFCFileRefTell(afc_connection conn, afc_file_ref ref, uint64_t *offset);
-afc_error_t AFCFileRefRead(afc_connection conn,afc_file_ref ref,void *buf,uint32_t *len);
+afc_error_t AFCFileRefRead(afc_connection conn,afc_file_ref ref,void *buf,uint64_t *len);
 afc_error_t AFCFileRefSetFileSize(afc_connection conn,afc_file_ref ref, uint64_t offset);
 afc_error_t AFCFileRefWrite(afc_connection conn,afc_file_ref ref, const void *buf, uint32_t len);
 // afc_error_t AFCFileRefLock(afc_connection *conn, afc_file_ref ref, ...);
