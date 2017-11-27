@@ -24,11 +24,15 @@ int main (int argc, const char * argv[]) {
         printf("\n\
 The script usage:\n\n\
 Copy file from desktop to device (App Documents) or specify path with filename:\n\
-    mobileDeviceManager -o copy -app \"Application_ID\" -from \"from file\" [-to \"to file\"]\n\
+    mobileDeviceManager -o push -app \"Application_ID\" -from \"from file\" [-to \"to file\"]\n\
+Copy file from device to desktop (Current folder) or specify path with filename:\n\
+    mobileDeviceManager -o pull -app \"Application_ID\" -from \"from file\" [-to \"to file\"]\n\
 List Applications:\n\
     mobileDeviceManager -o list\n\
 List Files in Application Documents (path):\n\
     mobileDeviceManager -o listFiles -app Appliction_ID [-path /Documents]\n\
+Delete Files in Application Documents (path):\n\
+    mobileDeviceManager -o delete -app Appliction_ID [-path /Documents]\n\
 Get appId for application name:\n\
     mobileDeviceManager -o getAppId -name Application_Name\n\
 Show device info:\n\
@@ -47,7 +51,7 @@ Show device info:\n\
     AMDevice *device = adapter.iosDevice;
     
     
-    if ([option isEqualToString:@"copy"]) {
+    if ([option isEqualToString:@"copy"] || [option isEqualToString:@"push"]) {
         NSLog(@"Will copy to Device: %@", device);
         
         NSString *fromFile = [arguments stringForKey:@"from"];
@@ -73,6 +77,68 @@ Show device info:\n\
         files = [appDir directoryContents:@"/Documents"];
         NSLog(@"app Documents files: %@", files);
         
+    } else if ([option isEqualToString:@"pull"]) {
+        NSLog(@"Will copy from Device: %@", device);
+
+        NSString *fromFile = [arguments stringForKey:@"from"];
+        NSString *toFile = [arguments stringForKey:@"to"];
+        NSString *appId = [arguments stringForKey:@"app"];
+
+        if (!fromFile || !appId) {
+            NSLog(@"no fromFile | no appId");
+            return 1001;
+        }
+
+        AFCApplicationDirectory *appDir = [device newAFCApplicationDirectory:appId];
+
+        NSArray *files = [appDir directoryContents:@"/Documents"];
+        NSLog(@"app Documents files: %@", files);
+
+        NSDictionary *finfo =[appDir getFileInfo:fromFile];
+        NSString *iftm = [finfo valueForKey:@"st_ifmt"];
+        BOOL isDir = [iftm compare:@"S_IFDIR"] == NSOrderedSame;
+        if (isDir) {
+            NSArray *files = [appDir directoryContents:fromFile];
+            for (NSString *fname in files) {
+                NSLog(@"Copy %@", fname);
+                NSString *src = [fromFile stringByAppendingPathComponent:fname];
+                [appDir copyRemoteFile:src toLocalDir:(toFile ? toFile : @".")];
+            }
+        } else {
+            if (!toFile) {
+                [appDir copyRemoteFile:fromFile toLocalDir:@"."];
+            } else {
+                [appDir copyRemoteFile:fromFile toLocalFile:toFile];
+            }
+        }
+    } else if ([option isEqualToString:@"delete"]) {
+
+        NSString *path = [arguments stringForKey:@"path"];
+        NSString *appId = [arguments stringForKey:@"app"];
+
+        if (!appId) {
+            NSLog(@"no appId");
+            return 1001;
+        }
+
+        AFCApplicationDirectory *appDir = [device newAFCApplicationDirectory:appId];
+
+        if (!path) path = @"/Documents";
+
+        NSDictionary *finfo =[appDir getFileInfo:path];
+        NSString *iftm = [finfo valueForKey:@"st_ifmt"];
+        BOOL isDir = [iftm compare:@"S_IFDIR"] == NSOrderedSame;
+        if (isDir) {
+            NSArray *files = [appDir directoryContents:path];
+            for (NSString *fname in files) {
+                NSLog(@"Delete %@", fname);
+                NSString *dest = [path stringByAppendingPathComponent:fname];
+                [appDir unlink:dest];
+            }
+        } else {
+            NSLog(@"Delete %@", path);
+            [appDir unlink:path];
+        }
     } else if ([option isEqualToString:@"listFiles"]) {
         
         NSString *path = [arguments stringForKey:@"path"];
